@@ -1,7 +1,12 @@
 package racingcar.model;
 
 
-public class Car{
+import camp.nextstep.edu.missionutils.Randoms;
+
+public class Car {
+    private static final int MOVE_THRESHOLD = 4;
+    private static final int RANDOM_MIN = 0;
+    private static final int RANDOM_MAX = 9;
 
     private final CarName name;
     private final Position position;
@@ -15,4 +20,21 @@ public class Car{
         this.position = position;
     }
 
+    public Car move() {
+        if (canMove()) {
+            return new Car(this.name, this.position.moveForward());
+        }
+        return this;
+    }
+
+    private boolean canMove() {
+        return Randoms.pickNumberInRange(RANDOM_MIN, RANDOM_MAX) >= MOVE_THRESHOLD;
+    }
+
+
+    public String toDisplayString() {
+        return name.getValue() + " : " + position.toDisplayBar();
+    }
+
 }
+
