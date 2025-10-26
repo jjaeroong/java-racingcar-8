@@ -18,6 +18,9 @@ public class RacingController {
         String nameInput = inputView.readCarNames();
         List<String> names = InputParser.parseCarNames(nameInput);
 
+        String tryCountInput = inputView.readTryCount();
+        int tryCount = InputParser.parseTryCount(tryCountInput);
+
     }
 
 }

@@ -14,6 +14,15 @@ public class InputParser {
                 .toList();
     }
 
+    public static int parseTryCount(final String input) {
+        validateNotNull(input);
+        try {
+            return Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException(ErrorMessage.INVALID_TRY_COUNT_FORMAT.message());
+        }
+    }
+
     private static void validateNotNull(String input) {
         if (input == null) {
             throw new IllegalArgumentException(ErrorMessage.NULL_INPUT.message());
