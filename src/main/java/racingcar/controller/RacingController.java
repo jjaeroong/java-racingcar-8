@@ -21,7 +21,6 @@ public class RacingController {
     }
 
     public void run() {
-
         String nameInput = inputView.readCarNames();
         List<String> names = InputParser.parseCarNames(nameInput);
         validator.validate(names);
@@ -34,7 +33,7 @@ public class RacingController {
         RacingGame racingGame = new RacingGame(cars, tryCount);
         List<Cars> raceResults = racingGame.play();
 
-
+        outputView.printResults(raceResults);
     }
 
 }

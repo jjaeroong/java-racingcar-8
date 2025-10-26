@@ -26,11 +26,17 @@ public class Position {
         return new Position(this.value + 1);
     }
 
+    public boolean isSameAs(Position other) {
+        return this.value == other.value;
+    }
 
     public String toDisplayBar() {
         return "-".repeat(value);
     }
 
+    public int compareTo(Position other) {
+        return Integer.compare(this.value, other.value);
+    }
 
     @Override
     public boolean equals(Object o) {
