@@ -5,9 +5,9 @@
 ### **1. 입력 기능**
 
 #### **1-1. 자동차 이름 입력**
-- [ ] 사용자로부터 자동차 이름 입력받기
-- [ ] 쉼표(`,`)로 구분하여 여러 이름 입력 가능
-- [ ] 각 이름의 공백 자동 제거(trim) 처리
+- [x] 사용자로부터 자동차 이름 입력받기
+- [x] 쉼표(`,`)로 구분하여 여러 이름 입력 가능
+- [x] 각 이름의 공백 자동 제거(trim) 처리
 
 #### **1-2. 시도 횟수 입력**
 - [ ] 사용자로부터 시도 횟수 입력받기
@@ -83,14 +83,14 @@
 
 ### **6. 예외 처리**
 
-- [ ] 자동차 이름이 빈 문자열인 경우 `IllegalArgumentException` 발생
-- [ ] 자동차 이름이 5자 초과인 경우 `IllegalArgumentException` 발생
+- [x] 자동차 이름이 빈 문자열인 경우 `IllegalArgumentException` 발생
+- [x] 자동차 이름이 5자 초과인 경우 `IllegalArgumentException` 발생
 - [ ] 중복된 이름이 있는 경우 `IllegalArgumentException` 발생
-- [ ] 참가자가 없는 경우 `IllegalArgumentException` 발생
+- [x] 참가자가 없는 경우 `IllegalArgumentException` 발생
 - [ ] 시도 횟수가 1 미만인 경우 `IllegalArgumentException` 발생
 - [ ] 시도 횟수가 숫자가 아닌 경우 `IllegalArgumentException` 발생
 - [ ] 위치가 음수인 경우 `IllegalArgumentException` 발생
-- [ ] 입력값이 null인 경우 `IllegalArgumentException` 발생
+- [x] 입력값이 null인 경우 `IllegalArgumentException` 발생
 
 ---
 
