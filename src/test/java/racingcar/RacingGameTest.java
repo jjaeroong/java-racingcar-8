@@ -11,20 +11,18 @@ import racingcar.model.Cars;
 import racingcar.model.RacingGame;
 
 public class RacingGameTest {
+
     @Test
-    @DisplayName("시도 횟수가 0이면 빈 결과를 반환한다")
+    @DisplayName("시도 횟수가 0이면 예외가 발생한다")
     void playWithZeroAttempts() {
 
         List<String> names = Arrays.asList("pobi", "crong");
         Cars cars = Cars.from(names);
         int tryCount = 0;
-        RacingGame game = new RacingGame(cars, tryCount);
 
 
-        List<Cars> results = game.play();
-
-
-        assertThat(results).isEmpty();
+        assertThatThrownBy(() -> new RacingGame(cars, tryCount))
+                .isInstanceOf(IllegalArgumentException.class);
     }
     @Test
     @DisplayName("시도 횟수가 음수이면 예외가 발생한다")
