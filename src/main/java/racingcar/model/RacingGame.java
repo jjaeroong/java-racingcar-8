@@ -2,12 +2,14 @@ package racingcar.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import racingcar.error.ErrorMessage;
 
 public class RacingGame {
     private final Cars cars;
     private final int numberOfAttempts;
 
     public RacingGame(Cars cars, int numberOfAttempts) {
+        validateNumberOfAttempts(numberOfAttempts);
         this.cars = cars;
         this.numberOfAttempts = numberOfAttempts;
     }
@@ -21,5 +23,10 @@ public class RacingGame {
             raceResults.add(currentCars);
         }
         return raceResults;
+    }
+    private void validateNumberOfAttempts(final int numberOfAttempts) {
+        if (numberOfAttempts <= 0) {
+            throw new IllegalArgumentException(ErrorMessage.INVALID_TRY_COUNT.message());
+        }
     }
 }
